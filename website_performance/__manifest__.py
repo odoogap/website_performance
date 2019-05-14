@@ -16,10 +16,6 @@
     'version': '11.0.0.1',
     'depends': ['website'],
 
-    'data': [
-        'views/website_views.xml'
-    ],
-
     'installable': True,
     'application': False,
     'auto_install': False,
