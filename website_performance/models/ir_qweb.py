@@ -11,11 +11,7 @@ class AssetsBundleDefer(AssetsBundle):
     def to_node(self, css=True, js=True, debug=False, async_load=False, **kw):
         response = []
         if debug != 'assets' and js and self.javascripts:
-            if 'assets_common' in self.js().name:
-                attr = OrderedDict([("async", "true"), ("type", "text/javascript"), ("src", self.js().url)])
-                response.append(("script", attr, None))
-                return response
-            elif 'website' in self.js().name or 'frontend' in self.js().name:
+            if 'website' in self.js().name or 'frontend' in self.js().name:
                 attr = OrderedDict([("defer", "true"), ("type", "text/javascript"), ("src", self.js().url)])
                 response.append(("script", attr, None))
                 return response
